@@ -1,0 +1,124 @@
+﻿{% extends 'myapp/index.html' %} 
+{% load static %}       
+{% block content %}
+<section class="content home">
+            <div class="block-header">
+                <div class="row">
+                    <div class="col-lg-5 col-md-5 col-sm-12">
+                        <h2>Profile <small class="text-muted">Welcome to Digital Society</small></h2>
+                    </div>            
+                    <div class="col-lg-7 col-md-7 col-sm-12 text-right">
+                        
+                        
+                                                    <button class="btn btn-white btn-icon btn-round d-none d-md-inline-block float-right m-l-10" type="button">
+                                <i class="zmdi zmdi-edit"></i>
+                            </button>
+                        
+                        <ul class="breadcrumb float-md-right">
+                            <li class="breadcrumb-item"><a href="..\dashboard\index.html"><i class="zmdi zmdi-home"></i> Digital Society</a></li>
+                                                            <li class="breadcrumb-item">Chairmans</li>
+                                                                                        <li class="breadcrumb-item active">Profile</li>
+                                                    </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">                
+                
+    <div class="row clearfix profile-page">
+        <div class="col-lg-4 col-md-12">
+            <div class="card profile-header">
+                <div class="body text-center">
+                    <div class="profile-image"> <img src="{% static 'myapp\assets\images\set.png.png' %}" alt=""> </div>
+                    <div>
+                        <h4 class="m-b-0"><strong>{{cid.username}}</strong></h4>
+                        <span class="job_post">{{uid.email}}</span>
+                        <p><b>Address</b> Motifali Gunjar,</p>
+                        <p>Dhandhuka,</p>
+                        <p>Ahmedabad,</p>
+                    </div>
+                    
+                </div>                    
+            </div>                               
+            
+                             
+        </div>
+        <div class="col-lg-8 col-md-12">
+            <div class="card">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Account">Account</a></li>                        
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane body active" id="about">
+                        <p>  NAME ==> JADAV NILESH RAMJIBHAI </p>
+                        <p>  AGE  ==> 23 </p>
+                        <p>  SUBJECT ==> PYTHON </p>
+                        
+                        
+                        
+                    </div>
+                    <div class="tab-pane body" id="Account">
+                        <form action="{% url 'change_password' %}" method="POST">
+                            {% csrf_token %}
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Username" value="{{cid.username}}" readonly>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Current Password" name="current_password">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="New Password" name="new_password">
+                        </div>
+                        <button class="btn btn-info btn-round">Save Changes</button>
+                        </form>
+                        <hr>
+                        <form method="POST" action="{% url 'update_profile_chairman' %}">
+                            {% csrf_token %}
+                        <div class="row clearfix">
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="UserName" name="username" value="{{cid.username}}">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Last Name">
+                                </div>
+                            </div>                                    
+                            <div class="col-lg-4 col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="City">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="E-mail">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Country">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group m-b-10">
+                                    <textarea rows="4" class="form-control no-resize" placeholder="Address Line 1"></textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-12">
+                                <button class="btn btn-primary btn-round">Save Changes</button>
+                            </div>
+                        </div>
+                        </form>
+                    </div>                        
+                </div>
+            </div>
+                           
+        </div>
+    </div>
+
+            </div>
+        </section>
+{% endblock %}        
+                
