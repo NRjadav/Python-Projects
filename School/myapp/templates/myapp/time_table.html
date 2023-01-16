@@ -1,0 +1,112 @@
+{% extends 'myapp/index.html' %}      
+
+{% block content %}
+<section class="content home">
+            <div class="block-header">
+                <div class="row">
+                    <div class="col-lg-5 col-md-5 col-sm-12">
+                        <h2>Add Doctors <small class="text-muted">Welcome to Oreo</small></h2>
+                    </div>            
+                    <div class="col-lg-7 col-md-7 col-sm-12 text-right">
+                        
+                                                    <button class="btn btn-white btn-icon btn-round d-none d-md-inline-block float-right m-l-10" type="button">
+                                <i class="zmdi zmdi-plus"></i>
+                            </button>
+                        
+                        
+                        <ul class="breadcrumb float-md-right">
+                            <li class="breadcrumb-item"><a href="..\dashboard\index.html"><i class="zmdi zmdi-home"></i> Oreo</a></li>
+                                                            <li class="breadcrumb-item">Doctors</li>
+                                                                                        <li class="breadcrumb-item active">Add Doctors</li>
+                                                    </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">                
+                
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="card">
+                <div class="header">
+                    <h2><strong>Time</strong> Table <small></small> </h2>
+                    <ul class="header-dropdown">
+                        <li class="remove">
+                            <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
+                        </li>
+                    </ul>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+  
+
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">Monday</th>
+            <th scope="col">Tuesday</th>
+            <th scope="col">Wednesday</th>
+            <th scope="col">Thursday</th>
+            <th scope="col">Friday</th>
+            <th scope="col">Saturday</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>English</td>
+            <td>Gujrati</td>
+            <td>Sociology</td>
+            <td>Maths</td>
+            <td>Hindi</td>
+            <td>Science</td>
+
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Gujrati</td>
+            <td>Sociology</td>
+            <td>Maths</td>
+            <td>Hindi</td>
+            <td>Science</td>
+            <td>English</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Sociology</td>
+            <td>Maths</td>
+            <td>Hindi</td>
+            <td>Science</td>
+            <td>English</td>
+            <td>Gujrati</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>Maths</td>
+            <td>Hindi</td>
+            <td>Science</td>
+            <td>English</td>
+            <td>Gujrati</td>
+            <td>Sociology</td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td>Hindi</td>
+            <td>Science</td>
+            <td>English</td>
+            <td>Gujrati</td>
+            <td>Sociology</td>
+            <td>Maths</td>
+          </tr>
+
+        </tbody>
+      </table>
+    
+   
+
+            </div>
+        </section>
+{% endblock %}        
+                
