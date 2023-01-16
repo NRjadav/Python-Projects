@@ -1,0 +1,47 @@
+<script>
+    $("#btnsubmitid").click(function(){
+        console.log("Button Submit Clicked");
+        let name=$("#nameid").val();
+        let email=$("#emailid").val();
+        console.log("=======> NAME",name);
+        
+        let csr=$("input[name=csrfmiddlewaretoken]").val();
+
+        userdata={
+            name : name,
+            email : email,
+            csrfmiddlewaretoken : csr,
+        };
+        $.ajax({
+            url : "{% url 'add_student' %}",
+            method : "POST",
+            data : userdata,
+            success : function(response){
+                console.log("add student");
+                $("#msgid").html(response.contaxt.msg);}
+        })
+    });
+
+    $("#btnupdate").click(function(){
+        console.log("Button Submit Clicked");
+        let name=$("#nameid").val();
+        let email=$("#emailid").val();
+        console.log("=======> NAME",name);
+        
+        let csr=$("input[name=csrfmiddlewaretoken]").val();
+
+        userdata={
+            name : name,
+            email : email,
+            csrfmiddlewaretoken : csr,
+        };
+        $.ajax({
+            url : "{% url 'update_student' %}",
+            method : "POST",
+            data : userdata,
+            success : function(response){
+                console.log("update student");
+                $("#msgid").html(response.contaxt.msg);}
+        })
+    });
+</script>

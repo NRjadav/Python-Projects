@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Ajax</title>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>        
+</head>
+<body>
+    <!-- <h1>Hello Nilesh</h1> -->
+    <p id="msgid"></p>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <input type="text" placeholder="Enter Your Name" id="nameid" />
+        <input type="email" placeholder="Enter Your Email" id="emailid" />
+        <input type="button" value="submit" id="btnsubmitid" />
+        <input type="button" value="update" id="btnupdate" />
+    </form>
+
+    {% include 'myapp/ajax.html' %}
+</body>
+</html>
